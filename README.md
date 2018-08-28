@@ -15,6 +15,7 @@ you have to install the required libraries before using them. Here we will use t
 **To install any library:**
 - First open the CMD as administrator 
 - Write pip install "LB" <br />
+
 Where “LB” is the name of the library you want to install.
 Sometimes your computer cant compile the necessary file to finish the installation , in this case, you can go to the link below and search for the library you have trouble installing. http://www.lfd.uci.edu/~gohlke/pythonlibs/#vlfd 
 After downloading the library, you can simply run the CMD as administrator in the current directory and use pip and the full-name of the download library to install it.<br /><br />
