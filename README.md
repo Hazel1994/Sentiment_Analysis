@@ -96,27 +96,32 @@ vectorizer = CountVectorizer(
 
 ```
 
-analyzer='word', indicates that the smallest token to work with is word
-tokenizer=tokenize introduces the defined tokenizer to use.
-lowercase=True, simply lowercases all the text first.
-max_features=500 specify the maximum numbe of features for each review, so here each review will be converted into a vector of length 500.
+- analyzer='word', indicates that the smallest token to work with is word.
+- tokenizer=tokenize introduces the defined tokenizer to use.
+- lowercase=True, simply lowercases all the text first.
+- max_features=500 specify the maximum numbe of features for each review, so here each review will be converted into a vector of length 500.
 
 Now, let’s use the above function as store the result into features.
 
+```python
 features = vectorizer.fit_transform(
     train_data_df.input.tolist())
 features = features.toarray()
 
-Splitting the data
+```
+
+## Splitting the data
 
 To evaluate our models we need to split the data into test and train. Python has a function called: train_test_split() which can be used as follows:
 
-
+```python
 X_train, X_test, y_train, y_test = train_test_split(
     features,
     train_data_df.output,
     train_size=0.7,test_size=.3
 )
+
+```
 
 You can modify the portion for both train and test.
 Alight, we are all prepare to use this data to train a classifier and evaluate it. There are numerous classifiers you can use but here we use SVM, Naive Bayes, and KNN. Run_some_models function takes the input data and print out the result for the three classifiers. 
@@ -125,30 +130,43 @@ I am going to illustrate the code for one classifier, the same explanation holds
 
 First we define the classifer
 
+```python
 print("running Knn")
 neigh = KNeighborsClassifier(n_neighbors=4)
+```
 
 train it on the train data
+
+```python
 neigh.fit(X_train,y_train)
+```
 
 predict the train data and display accurary
+
+```python
 y_pred=neigh.predict(X_train)
 print('accuracy train : ', accuracy_score(y_train, y_pred))
+```
 
 predict the test data and display the accuracy
 
+```python
 y_pred = neigh.predict(X_test)
 print('test accuracy :', accuracy_score(y_test, y_pred))
+```
 
 display the classification report for test data, it will show recall, precision, and f-score for the predicted test labels.
 
+```python
 print("classification report")
 print(classification_report(y_test, y_pred))
-
+```
 
 ## result 
 
 
 Now let’s run the main.py file and see the results:
+
+![Alt text](https://github.com/Hazel1994/Sentiment_Analysis/blob/master/images/sent1.png)
 
 
