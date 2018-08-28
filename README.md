@@ -1,17 +1,16 @@
 # Sentiment analyses in python Using bag of words features
 
-This is a tutorial for beginners.
+> This is a tutorial for beginners.
 I am going to explain how to write a program for sentiment analysis
 using python. I will try to be as comprehensive  as possible. 
 
 
 ## Installing python
-
-You can easily download python from https://www.python.org/downloads/ , the version used in this project is python 3.5.2 64 bit.
-After installing python you can run python files using CMD but you can also use Pycharm which is an IDE for python. Coding and debugging in Pycharm is really easy. You can download the fee (communit )version of it via the link below:
+You can easily download python from https://www.python.org/downloads/ , the version used in this project is python 3.5.2, 64 bit.
+After installing python you can run python files using CMD but you can also use Pycharm which is an IDE for python. Coding and debugging in Pycharm is really easy. You can download the fee (community)version of it via the link below:
 https://www.jetbrains.com/pycharm/download/#section=windows
-It will usually recognize the python on your computer but you might have to go to Setting-interpreter and brows for the python.exe file.
-2 Installing required libraries:
+It will usually recognize the python on your computer but you might have to go to Setting->interpreter and browse for the python.exe file.
+## Installing required libraries
 Unlike MATLAB, you have to install the required libraries before using them. Here we will use the “pip” method to get this done.
 To install any library: 
 •	First open the CMD as administrator 
