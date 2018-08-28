@@ -11,15 +11,15 @@ After installing python you can run python files using CMD but you can also use 
 https://www.jetbrains.com/pycharm/download/#section=windows. 
 It will usually recognize the python on your computer but you might have to go to Setting->interpreter and browse for the python.exe file.
 ## Installing required libraries
-you have to install the required libraries before using them. Here we will use the “pip” method to get this done.
+you have to install the required libraries before using them. Here we will use the “pip” method to get this done.<br />
 **To install any library:**
 - First open the CMD as administrator 
-- Write pip install "LB"
+- Write pip install "LB" <br />
 Where “LB” is the name of the library you want to install.
 Sometimes your computer cant compile the necessary file to finish the installation , in this case, you can go to the link below and search for the library you have trouble installing. http://www.lfd.uci.edu/~gohlke/pythonlibs/#vlfd 
-After downloading the library, you can simply run the CMD as administrator in the current directory and use pip and the full-name of the download library to install it.
+After downloading the library, you can simply run the CMD as administrator in the current directory and use pip and the full-name of the download library to install it.<br /><br />
 
-**The libraries you need to install to run this project are:**
+The libraries you need to install to run this project are:
 - NLTK
 - sklearn
 - numpy
@@ -36,7 +36,9 @@ The dataset we are using in this project is the binary classification one, you c
 ## Feature extraction
 Machine learning models works with numerical data, and hence we have to convert our review to numerical representation. There are many technique to achieve this goal.  Here we are using Bag of Word representation which you should already be familiar with , if youre not you can take a look at this: https://medium.com/greyatom/an-introduction-to-bag-of-words-in-nlp-ac967d43b428
 So let’s dive right into it.
-First we need to import the required library mentioned above 
+First we need to import the required library mentioned above <br />
+
+``` python
 
 import numpy as np
 import pandas as pd
@@ -45,9 +47,15 @@ from sklearn.model_selection import train_test_split
 import re, nltk
 from evaluate import run_some_models
 
-evaluate is a file we will use to evaluate our models. It’s not a built-in library.
-Lets load our data using Pandas:
+```
+
+"evaluate" is a file we will use to evaluate our models. It’s not a built-in library.<br/>
+Lets load our data using Pandas:<br/>
+
+```python
 train_data_df = pd.read_csv(data.txt', header=None, delimiter="\t")
+
+```
 
 “delimiter” determines  a token used to separate the samples from their labels which is the tab in our case.
 “Header=None” indicates that there is no header in the data file.
