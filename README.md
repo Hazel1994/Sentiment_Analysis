@@ -35,7 +35,7 @@ The dataset we are using in this project is the binary classification one, you c
 - 0	Oh, and Brokeback Mountain was a terrible movie.
 
 
-## Feature extraction
+## extracting BOW Features
 Machine learning models works with numerical data, and hence we have to convert our review to numerical representation. There are many technique to achieve this goal.  Here we are using Bag of Word representation which you should already be familiar with , if youre not,  you can take a look at this: https://medium.com/greyatom/an-introduction-to-bag-of-words-in-nlp-ac967d43b428
 
 
