@@ -127,6 +127,7 @@ X_train, X_test, y_train, y_test = train_test_split(
 
 You can also modify the portion for both train and test.
 
+## Training and Evaluating
 
 Alight, we are all prepare to use this data to train a classifier and evaluate it. There are numerous classifiers you can use but here we use SVM, Naive Bayes, and KNN. Run_some_models function takes the input data and print out the results for the three classifiers. 
 
