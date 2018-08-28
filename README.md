@@ -173,6 +173,7 @@ Now let’s run the main.py file and see the results:
 
 ![Alt text](https://github.com/Hazel1994/Sentiment_Analysis/blob/master/images/sent1.png)
 
+
 As you can see all the three classifers perform really great. <br/>
 This is dataset is very simple. if you want to try more difficult dataset, take a look at [this](https://www.kaggle.com/c/sentiment-analysis-on-imdb-movie-reviews/data)
 
