@@ -58,8 +58,8 @@ train_data_df = pd.read_csv(data.txt', header=None, delimiter="\t")
 
 ```
 
--“delimiter” determines  a token used to separate the samples from their labels which is the tab in our case.
--“Header=None” indicates that there is no header in the data file.
+- “delimiter” determines  a token used to separate the samples from their labels which is the tab in our case.
+- “Header=None” indicates that there is no header in the data file.
 
 Now that we have our data stored as a dataframe, let’s name each column for better use.
 
