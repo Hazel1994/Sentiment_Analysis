@@ -58,25 +58,34 @@ train_data_df = pd.read_csv(data.txt', header=None, delimiter="\t")
 
 ```
 
-“delimiter” determines  a token used to separate the samples from their labels which is the tab in our case.
-“Header=None” indicates that there is no header in the data file.
+-“delimiter” determines  a token used to separate the samples from their labels which is the tab in our case.
+-“Header=None” indicates that there is no header in the data file.
 
 Now that we have our data stored as a dataframe, let’s name each column for better use.
 
+``` python
 train_data_df.columns = ["output","input"]
+
+```
 
 The first columns is the class of each review. 
 The next step is to create a tokenizer to split the raw text into words and delete the unnecessary characters. So lets define a function that receives a raw review and gives out the tokenized version of it. 
+
+```python
 def tokenize(text):
     text = re.sub("[^A-Za-z0-9]", " ", text)
     tokens = nltk.word_tokenize(text)
     return tokens
+```
 
-re.sub("[^A-Za-z0-9]", " ", text) simply removes everything from the text apart from English characters and numbers.
+- re.sub("[^A-Za-z0-9]", " ", text) simply removes everything from the text apart from English characters and numbers.
 
-tokens = nltk.word_tokenize(text) uses nltk to split the text into its words.
+- tokens = nltk.word_tokenize(text) uses nltk to split the text into its words.<br/>
+
 
 Now that we preprocessed the raw data, let’s define a Bag of word vectorizer to convert the data into trainable numeric data. 
+
+```python
 
 vectorizer = CountVectorizer(
     analyzer='word',
@@ -84,6 +93,8 @@ vectorizer = CountVectorizer(
     lowercase=True,
     max_features=500
 )
+
+```
 
 analyzer='word', indicates that the smallest token to work with is word
 tokenizer=tokenize introduces the defined tokenizer to use.
