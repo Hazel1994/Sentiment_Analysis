@@ -18,12 +18,13 @@ you have to install the required libraries before using them. Here we will use t
 
 Where “LB” is the name of the library you want to install.
 Sometimes your computer cant compile the necessary file to finish the installation , in this case, you can go to the link below and search for the library you have trouble installing. http://www.lfd.uci.edu/~gohlke/pythonlibs/#vlfd 
+
+
 After downloading the library, you can simply run the CMD as administrator in the current directory and use pip and the full-name of the download library to install it.<br /><br />
 
 The libraries you need to install to run this project are:
 - NLTK
 - sklearn
-- numpy
 - pandas
 
 ## Dataset 
@@ -35,13 +36,14 @@ The dataset we are using in this project is the binary classification one, you c
 
 
 ## Feature extraction
-Machine learning models works with numerical data, and hence we have to convert our review to numerical representation. There are many technique to achieve this goal.  Here we are using Bag of Word representation which you should already be familiar with , if youre not you can take a look at this: https://medium.com/greyatom/an-introduction-to-bag-of-words-in-nlp-ac967d43b428
+Machine learning models works with numerical data, and hence we have to convert our review to numerical representation. There are many technique to achieve this goal.  Here we are using Bag of Word representation which you should already be familiar with , if youre not,  you can take a look at this: https://medium.com/greyatom/an-introduction-to-bag-of-words-in-nlp-ac967d43b428
+
+
 So let’s dive right into it.
 First we need to import the required library mentioned above <br />
 
 ``` python
 
-import numpy as np
 import pandas as pd
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.model_selection import train_test_split
@@ -68,7 +70,7 @@ train_data_df.columns = ["output","input"]
 
 ```
 
-The first columns is the class of each review. 
+The first columns is the class of each review.<br/>
 The next step is to create a tokenizer to split the raw text into words and delete the unnecessary characters. So lets define a function that receives a raw review and gives out the tokenized version of it. 
 
 ```python
@@ -99,9 +101,9 @@ vectorizer = CountVectorizer(
 - analyzer='word', indicates that the smallest token to work with is word.
 - tokenizer=tokenize introduces the defined tokenizer to use.
 - lowercase=True, simply lowercases all the text first.
-- max_features=500 specify the maximum numbe of features for each review, so here each review will be converted into a vector of length 500.
+- max_features=500 specify the maximum number of features for each review, so here each review will be converted into a vector of length 500.
 
-Now, let’s use the above function as store the result into features.
+Now, let’s use the above function to store the result into features.
 
 ```python
 features = vectorizer.fit_transform(
@@ -123,8 +125,10 @@ X_train, X_test, y_train, y_test = train_test_split(
 
 ```
 
-You can modify the portion for both train and test.
-Alight, we are all prepare to use this data to train a classifier and evaluate it. There are numerous classifiers you can use but here we use SVM, Naive Bayes, and KNN. Run_some_models function takes the input data and print out the result for the three classifiers. 
+You can also modify the portion for both train and test.
+
+
+Alight, we are all prepare to use this data to train a classifier and evaluate it. There are numerous classifiers you can use but here we use SVM, Naive Bayes, and KNN. Run_some_models function takes the input data and print out the results for the three classifiers. 
 
 I am going to illustrate the code for one classifier, the same explanation holds for the rest.
 
@@ -141,21 +145,21 @@ train it on the train data
 neigh.fit(X_train,y_train)
 ```
 
-predict the train data and display accurary
+predict the train data and display its accurary
 
 ```python
 y_pred=neigh.predict(X_train)
 print('accuracy train : ', accuracy_score(y_train, y_pred))
 ```
 
-predict the test data and display the accuracy
+predict the test data and display its accuracy
 
 ```python
 y_pred = neigh.predict(X_test)
 print('test accuracy :', accuracy_score(y_test, y_pred))
 ```
 
-display the classification report for test data, it will show recall, precision, and f-score for the predicted test labels.
+display the classification report for test data, it will print out the  recall, precision, and f-score for the predicted test labels.
 
 ```python
 print("classification report")
@@ -168,5 +172,8 @@ print(classification_report(y_test, y_pred))
 Now let’s run the main.py file and see the results:
 
 ![Alt text](https://github.com/Hazel1994/Sentiment_Analysis/blob/master/images/sent1.png)
+
+As you can see all the three classifers perform really great.,br/>
+This is dataset is a very simple one. if you want to try more difficult dataset, take a look at [this](https://www.kaggle.com/c/sentiment-analysis-on-imdb-movie-reviews/data)
 
 
